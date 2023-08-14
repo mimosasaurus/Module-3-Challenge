@@ -8,11 +8,11 @@ const chars = {
 }
 
 
-// 
+// Write password to the #password input
 function writePassword(){
-// 
+// Gather User Inputs
   var length = window.prompt("How long would you like your password to be? You can pick between 8 and 128 characters");
-//
+//Validate Password Length
   if (length < 8 || length > 128){
     window.alert("Error, you entered a number outside the range!")
     writePassword()
@@ -22,7 +22,7 @@ function writePassword(){
   var numbers = window.confirm ("Would you like numbers?");
   var specsym = window.confirm ("Would you like special symbols?");
   
-// 
+// Collect Requested Character Sets
   var selectedcharset = "";
   if (upper){
     selectedcharset += chars.upperCase;
@@ -40,7 +40,7 @@ function writePassword(){
     window.alert ("Error! Please select one option!");
     writePassword();
   } else {
-    // 
+    // Build out password with random characters from selection
     var newpassword = "";
     for (var i = 0; i < length; i++){
       var index = Math.floor(Math.random() * selectedcharset.length)
